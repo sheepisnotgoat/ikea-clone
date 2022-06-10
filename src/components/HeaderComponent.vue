@@ -1,6 +1,6 @@
 <template>
   <div class="main-header-container">
-    <div class="logo-container">
+    <div class="logo-container" @click="routeToHome">
       <img class="logo" src="/ikea.svg" alt="ikea_logo" />
     </div>
 
@@ -83,6 +83,9 @@ export default {
   background: transparent;
   border: none;
 }
+.user-button:hover {
+  cursor: pointer;
+}
 .user-stat-container {
   display: flex;
   justify-content: center;
@@ -97,6 +100,9 @@ export default {
   height: 45px;
   background: transparent;
   border: none;
+}
+.search-button:hover {
+  cursor: pointer;
 }
 .search-icon {
   width: 25px;
