@@ -2,9 +2,9 @@
   <div class="item-card">
     <div class="item-image-container"></div>
     <div class="item-details-container">
-      <span>{{ this.product.productName }}</span>
-      <span>{{ this.product.productPrice }}</span>
-      <span>{{ this.product.Rating }}</span>
+      <p>{{ this.product.productName }}</p>
+      <p>{{ this.product.productPrice }}</p>
+      <p>{{ this.product.Rating }}</p>
     </div>
   </div>
 </template>
@@ -26,11 +26,16 @@ export default {
 </script>
 
 <style>
+p {
+  margin: 0;
+}
 .item-card {
   border: 1px solid black;
   width: 250px;
   height: 300px;
   margin: 20px;
+  color: black;
+  text-decoration: none;
 }
 .item-image-container {
   border: 1px solid black;
@@ -41,9 +46,6 @@ export default {
   border: 1px solid black;
   width: 230px;
   height: 78px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   padding: 10px;
 }
 </style>

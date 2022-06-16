@@ -2,12 +2,19 @@
   <div class="home-view">
     <HeaderComponent />
     <div class="product-listing">
-      <ItemCard v-for="(item, index) in items" :key="index" :product="item" />
+      <router-link
+        v-for="(item, index) in this.products"
+        :key="index"
+        :to="`product/${item.productId}`"
+      >
+        <ItemCard :product="item" />
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import HeaderComponent from "../components/HeaderComponent.vue";
 import ItemCard from "../components/ItemCard.vue";
 
@@ -17,10 +24,14 @@ export default {
     HeaderComponent,
     ItemCard,
   },
-  data() {
-    return {
-      items: this.$store.state.products,
-    };
+
+  computed: {
+    ...mapState(["products"]),
+  },
+  methods: {
+    onProductClick(pid) {
+      this.$router.push({ name: "product", params: { pid } });
+    },
   },
 };
 </script>
@@ -31,5 +42,8 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+a {
+  text-decoration: none;
 }
 </style>

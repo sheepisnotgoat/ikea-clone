@@ -19,7 +19,7 @@
             class="search-icon"
             src="/search-button.svg"
             alt="search!"
-            @click="onDivClick"
+            @click="onSearch"
           />
         </button>
       </div>
@@ -42,8 +42,11 @@ export default {
     };
   },
   methods: {
-    onDivClick() {
+    onSearch() {
       alert(this.lv_search);
+    },
+    routeToHome() {
+      this.$router.push("/");
     },
   },
 };
@@ -58,6 +61,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.logo-container:hover {
+  cursor: pointer;
 }
 .main-header-container {
   display: flex;
