@@ -1,7 +1,7 @@
 <template>
   <div class="home-view">
     <HeaderComponent />
-    <div class="product-listing">
+    <!-- <div class="product-listing">
       <router-link
         v-for="(item, index) in this.products"
         :key="index"
@@ -9,29 +9,29 @@
       >
         <ItemCard :product="item" />
       </router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import HeaderComponent from "../components/HeaderComponent.vue";
-import ItemCard from "../components/ItemCard.vue";
+// import ItemCard from "../components/ItemCard.vue";
 
 export default {
   name: "HomeView",
   components: {
     HeaderComponent,
-    ItemCard,
+    // ItemCard,
   },
 
   computed: {
     ...mapState(["products"]),
   },
   methods: {
-    onProductClick(pid) {
-      this.$router.push({ name: "product", params: { pid } });
-    },
+    // onProductClick(pid) {
+    //   this.$router.push({ name: "product", params: { pid } });
+    // },
   },
 };
 </script>

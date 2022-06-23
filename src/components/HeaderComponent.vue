@@ -1,34 +1,39 @@
 <template>
   <div class="main-header-container">
-    <div class="logo-container" @click="routeToHome">
-      <img class="logo" src="/ikea.svg" alt="ikea_logo" />
+    <div class="logo-container">
+      <router-link :to="`/`">
+        <img class="logo" src="/ikea.svg" alt="ikea_logo" />
+      </router-link>
     </div>
 
     <div class="user-action-container">
-      <div class="search-container">
-        <input
+      <div class="search-box">
+        <button class="search-button">
+          <span class="material-symbols-outlined search-icon" @click="onsearch">
+            search
+          </span>
+        </button>
+        <!-- <input
           class="search-box"
           type="text"
           name="search"
           id="search"
           placeholder="Search..."
           v-model="lv_search"
+        /> -->
+        <input
+          type="text"
+          placeholder="What are you looking for?"
+          v-model="lv_search"
         />
-        <button class="search-button">
-          <img
-            class="search-icon"
-            src="/search-button.svg"
-            alt="search!"
-            @click="onSearch"
-          />
-        </button>
       </div>
     </div>
 
     <div class="user-stat-container">
       <button class="user-button">
-        <img src="/user-icon.png" alt="User" />
+        <span class="material-symbols-outlined"> person_filled </span>
       </button>
+      <span>Hey, Abhijit</span>
     </div>
   </div>
 </template>
@@ -45,9 +50,6 @@ export default {
     onSearch() {
       alert(this.lv_search);
     },
-    routeToHome() {
-      this.$router.push("/");
-    },
   },
 };
 </script>
@@ -59,6 +61,7 @@ export default {
 }
 .logo-container {
   display: flex;
+  margin: 0 1rem;
   justify-content: center;
   align-items: center;
 }
@@ -67,51 +70,75 @@ export default {
 }
 .main-header-container {
   display: flex;
+  margin-top: 0.6rem;
   justify-content: space-between;
 }
 .search-box {
-  padding: 10px;
-  width: 90%;
-  height: 25px;
-  margin-right: 1%;
-  background: transparent;
-  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: #dfdfdf;
+  /* border: 1.5px solid black; */
   border-radius: 25px 25px 25px 25px;
+}
+.search-box input {
+  border: none;
+  background-color: #dfdfdf;
+  color: black;
+  font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+}
+::placeholder {
+  color: black;
+}
+.search-box input:focus {
+  outline: none;
+  color: black;
 }
 .search-box:focus {
   outline: none;
 }
 .user-action-container {
-  width: 35%;
+  width: 100%;
   display: flex;
+  padding: 0.5rem;
 }
 .user-button {
   background: transparent;
   border: none;
+}
+.user-button img {
+  width: 21px;
+  height: 21px;
 }
 .user-button:hover {
   cursor: pointer;
 }
 .user-stat-container {
   display: flex;
+  flex-shrink: 0;
+  padding: 1rem;
   justify-content: center;
   align-items: center;
+  font-family: "Hind", sans-serif;
+  font-weight: 500;
 }
 .search-container {
   display: flex;
   width: 100%;
 }
 .search-button {
-  width: 45px;
-  height: 45px;
+  padding: 0%;
   background: transparent;
   border: none;
+  margin: 0 0.5rem;
 }
 .search-button:hover {
   cursor: pointer;
 }
 .search-icon {
-  width: 25px;
-  height: 25px;
+  margin-top: 4px;
+  font-size: 1.4rem;
 }
 </style>
