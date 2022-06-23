@@ -9,18 +9,10 @@
     <div class="user-action-container">
       <div class="search-box">
         <button class="search-button">
-          <span class="material-symbols-outlined search-icon" @click="onsearch">
+          <span class="material-symbols-outlined search-icon" @click="onSearch">
             search
           </span>
         </button>
-        <!-- <input
-          class="search-box"
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search..."
-          v-model="lv_search"
-        /> -->
         <input
           type="text"
           placeholder="What are you looking for?"
@@ -61,7 +53,7 @@ export default {
 }
 .logo-container {
   display: flex;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
   justify-content: center;
   align-items: center;
 }
@@ -70,19 +62,22 @@ export default {
 }
 .main-header-container {
   display: flex;
-  margin-top: 0.6rem;
+  padding: 1rem 0;
   justify-content: space-between;
 }
 .search-box {
   display: flex;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 1rem;
   background: #dfdfdf;
   /* border: 1.5px solid black; */
-  border-radius: 25px 25px 25px 25px;
+  /* border-radius: 25px 25px 25px 25px; */
+  border-radius: 3rem;
 }
 .search-box input {
   border: none;
+  width: 100%;
+  padding: 0 1rem;
   background-color: #dfdfdf;
   color: black;
   font-size: 1rem;
@@ -119,6 +114,7 @@ export default {
   display: flex;
   flex-shrink: 0;
   padding: 1rem;
+  margin: 0 1rem;
   justify-content: center;
   align-items: center;
   font-family: "Hind", sans-serif;
@@ -138,7 +134,7 @@ export default {
   cursor: pointer;
 }
 .search-icon {
-  margin-top: 4px;
+  margin-top: 10px;
   font-size: 1.4rem;
 }
 </style>
