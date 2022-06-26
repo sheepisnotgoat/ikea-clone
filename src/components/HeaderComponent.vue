@@ -13,11 +13,13 @@
             search
           </span>
         </button>
-        <input
-          type="text"
-          placeholder="What are you looking for?"
-          v-model="lv_search"
-        />
+        <form @submit.prevent="onSearch">
+          <input
+            type="text"
+            placeholder="What are you looking for?"
+            v-model="lv_search"
+          />
+        </form>
       </div>
     </div>
 
@@ -83,6 +85,7 @@ export default {
   font-size: 1rem;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
+  margin-top: 0.7rem;
 }
 ::placeholder {
   color: black;

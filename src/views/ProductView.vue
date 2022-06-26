@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .product-container {
   margin-top: 10px;
   border: 1px solid black;

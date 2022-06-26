@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 p {
   margin: 0;
 }
@@ -41,9 +41,12 @@ p {
 .item-card {
   /* border: 1px solid black; */
 
-  margin: 2rem;
+  /* margin: 2rem; */
   color: black;
   text-decoration: none;
+}
+.item-card:hover {
+  cursor: pointer;
 }
 .product-name {
   font-family: "Source Sans Pro";
