@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState } from "vuex";
 import HeaderComponent from "../components/HeaderComponent.vue";
 import ItemCard from "../components/ItemCard.vue";
 
@@ -29,9 +29,10 @@ export default {
 
   computed: {
     ...mapState(["products"]),
-    ...mapGetters(["getSortedProducts", "getFilteredProucts"]),
   },
-  methods: {},
+  mounted() {
+    console.log("home mounted");
+  },
 };
 </script>
 

@@ -28,7 +28,7 @@
               alt="demo-image"
             />
           </div>
-          <div class="product-description-vis product-description">
+          <div class="main-font product-description">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               tellus mauris, eleifend id nisi vitae, congue fermentum sem. Donec
@@ -41,13 +41,32 @@
           </div>
         </div>
       </div>
-      <div class="details-right-col solid-black-border"></div>
+      <div class="details-right-col">
+        <div class="product-info">
+          <span class="product-name hind-font">{{ product.productName }}</span>
+          <span
+            >Rs.
+            <span class="product-price">{{ product.productPrice }}</span></span
+          >
+          <br />
+          <span class="ssp-font"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span
+          >
+          <br />
+          <br />
+          <span class="product-rating"
+            >{{ product.Rating }}
+            <span class="material-symbols-outlined star-icon"> star</span></span
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import HeaderComponent from "../components/HeaderComponent.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "ProductView",
   components: {
@@ -55,19 +74,27 @@ export default {
   },
   data() {
     return {
-      product: { type: Object },
+      // product: { type: Object },
       prodId: this.$route.params.pid,
     };
   },
   methods: {
-    getProduct() {
-      this.product = this.$store.getters.getProductById(this.prodId);
+    // getProduct() {
+    //   console.log(this.prodId);
+    //   this.product = this.$store.getters.getProductById(this.prodId);
+    // },
+  },
+  computed: {
+    ...mapGetters(["getProductById"]),
+    product() {
+      return this.$store.getters.getProductById(this.prodId);
     },
   },
-  mounted() {
-    this.getProduct();
-    console.log(this.product);
-  },
+  // mounted() {
+  //   console.log("pview mounted");
+  //   this.getProduct();
+  //   console.log(this.product);
+  // },
 };
 </script>
 
@@ -89,6 +116,7 @@ export default {
   height: 90vh;
   position: sticky;
   top: 2rem;
+  padding-top: 5rem;
   box-sizing: border-box;
 }
 .img-wrapper {
@@ -104,11 +132,34 @@ export default {
   padding: 2rem;
   justify-content: center;
 }
-.product-description-vis {
+.ssp-font {
   font-family: "Source Sans Pro", "sans-serif";
+}
+.hind-font {
+  font-family: "Hind", "sans-serif";
 }
 
 .product-description {
   margin: 2rem;
+}
+.product-name {
+  font-size: 1.5rem;
+  margin: 1rem 6rem 1rem 0;
+}
+.product-price {
+  font-size: 1.5rem;
+}
+
+.star-icon {
+  /* margin-top: 1rem; */
+
+  font-size: 0.9rem;
+}
+.product-info {
+  padding: 1rem;
+  margin-top: 3.2rem;
+}
+.product-rating {
+  font-size: 1.3rem;
 }
 </style>
