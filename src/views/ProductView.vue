@@ -1,13 +1,47 @@
 <template>
-  <div class="product-view">
+  <div class="product-view-page">
     <HeaderComponent />
-    <div class="product-container">
-      <div class="product-image-container"></div>
-      <div class="product-details">
-        <p>{{ this.product.productName }}</p>
-        <p>{{ this.product.productPrice }}</p>
-        <p>{{ this.product.Rating }}</p>
+    <div class="product-details-wrapper">
+      <div class="details-left-col">
+        <div class="product-images">
+          <div class="img-wrapper">
+            <img
+              src="https://www.ikea.com/in/en/images/products/tromma-wall-clock-white__0836082_pe778497_s5.jpg"
+              alt="demo-image"
+            />
+          </div>
+          <div class="img-wrapper">
+            <img
+              src="https://www.ikea.com/in/en/images/products/tromma-wall-clock-white__0836082_pe778497_s5.jpg"
+              alt="demo-image"
+            />
+          </div>
+          <div class="img-wrapper">
+            <img
+              src="https://www.ikea.com/in/en/images/products/tromma-wall-clock-white__0836082_pe778497_s5.jpg"
+              alt="demo-image"
+            />
+          </div>
+          <div class="img-wrapper">
+            <img
+              src="https://www.ikea.com/in/en/images/products/tromma-wall-clock-white__0836082_pe778497_s5.jpg"
+              alt="demo-image"
+            />
+          </div>
+          <div class="product-description-vis product-description">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tellus mauris, eleifend id nisi vitae, congue fermentum sem. Donec
+              enim nibh, gravida et semper id, fringilla sit amet augue. Duis
+              laoreet vulputate urna, ac auctor erat consectetur sed. Nunc
+              pulvinar sit amet odio non pretium. Sed feugiat tempus enim, sit
+              amet vulputate velit vulputate vitae. Sed non dignissim nisi.
+              Pellentesque malesuada orci sit amet nisi porta tristique.
+            </p>
+          </div>
+        </div>
       </div>
+      <div class="details-right-col solid-black-border"></div>
     </div>
   </div>
 </template>
@@ -38,27 +72,43 @@ export default {
 </script>
 
 <style scoped>
-.product-container {
-  margin-top: 10px;
+.solid-black-border {
   border: 1px solid black;
-  width: 100%;
-  height: 500px;
+}
+.product-details-wrapper {
   display: flex;
-  flex-direction: column;
-
-  align-items: center;
+  width: 98vw;
+  margin: auto;
+}
+.details-left-col {
+  width: 60vw;
+  box-sizing: border-box;
+}
+.details-right-col {
+  width: 40vw;
+  height: 90vh;
+  position: sticky;
+  top: 2rem;
+  box-sizing: border-box;
+}
+.img-wrapper {
+  width: 17rem;
+  margin: 1rem;
+}
+.img-wrapper:hover {
+  cursor: pointer;
+}
+.product-images {
+  display: flex;
+  flex-flow: wrap;
+  padding: 2rem;
   justify-content: center;
 }
-
-.product-image-container {
-  border: 1px solid black;
-  width: 500px;
-  height: 250px;
-  margin-bottom: 10px;
+.product-description-vis {
+  font-family: "Source Sans Pro", "sans-serif";
 }
-.product-details {
-  border: 1px solid black;
-  width: 98%;
-  height: 200px;
+
+.product-description {
+  margin: 2rem;
 }
 </style>
