@@ -2,7 +2,9 @@
   <div class="home-view">
     <HeaderComponent />
 
-    <div class="custom-actions"></div>
+    <div class="custom-actions">
+      <PriceFilterButton />
+    </div>
     <div class="product-listing">
       <router-link
         v-for="(item, index) in products"
@@ -19,12 +21,14 @@
 import { mapState } from "vuex";
 import HeaderComponent from "../components/HeaderComponent.vue";
 import ItemCard from "../components/ItemCard.vue";
+import PriceFilterButton from "../components/PriceFilterButton.vue";
 
 export default {
   name: "HomeView",
   components: {
     HeaderComponent,
     ItemCard,
+    PriceFilterButton,
   },
 
   computed: {
@@ -43,6 +47,7 @@ a {
 
 .custom-actions {
   width: 100%;
+  padding: 0 6.5rem;
   margin-top: 1rem;
   display: flex;
   position: relative;

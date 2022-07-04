@@ -28,7 +28,7 @@
               alt="demo-image"
             />
           </div>
-          <div class="main-font product-description">
+          <div class="main-font product-description grey-font">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               tellus mauris, eleifend id nisi vitae, congue fermentum sem. Donec
@@ -44,16 +44,18 @@
       <div class="details-right-col">
         <div class="product-info">
           <span class="product-name hind-font">{{ product.productName }}</span>
-          <span
+          <span class="price"
             >Rs.
             <span class="product-price">{{ product.productPrice }}</span></span
           >
           <br />
-          <span class="ssp-font"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span
+          <br />
+          <span class="ssp-font grey-font product-type"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <br />Price incl. of all taxes</span
           >
           <br />
-          <br />
+
           <span class="product-rating"
             >{{ product.Rating }}
             <span class="material-symbols-outlined star-icon"> star</span></span
@@ -78,23 +80,12 @@ export default {
       prodId: this.$route.params.pid,
     };
   },
-  methods: {
-    // getProduct() {
-    //   console.log(this.prodId);
-    //   this.product = this.$store.getters.getProductById(this.prodId);
-    // },
-  },
   computed: {
     ...mapGetters(["getProductById"]),
     product() {
       return this.$store.getters.getProductById(this.prodId);
     },
   },
-  // mounted() {
-  //   console.log("pview mounted");
-  //   this.getProduct();
-  //   console.log(this.product);
-  // },
 };
 </script>
 
@@ -132,13 +123,20 @@ export default {
   padding: 2rem;
   justify-content: center;
 }
+.price {
+  padding: 0.3rem 0.3rem 0.2rem 0.2rem;
+  background: yellow;
+  box-shadow: 0.125rem 0.125rem #e00751;
+}
+.grey-font {
+  color: #484848;
+}
 .ssp-font {
   font-family: "Source Sans Pro", "sans-serif";
 }
 .hind-font {
   font-family: "Hind", "sans-serif";
 }
-
 .product-description {
   margin: 2rem;
 }
@@ -151,8 +149,6 @@ export default {
 }
 
 .star-icon {
-  /* margin-top: 1rem; */
-
   font-size: 0.9rem;
 }
 .product-info {
