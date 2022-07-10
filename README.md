@@ -1,24 +1,7 @@
 # ikea-clone
 
-## Project setup
-```
-npm install
-```
+## Project discontinued because of bad dev practices
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## moved to new ecomm project
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## feature testing will be done here.....

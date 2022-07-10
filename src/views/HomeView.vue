@@ -32,7 +32,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["products"]),
+    ...mapState(["products", "filteredProducts"]),
   },
   mounted() {
     console.log("home mounted");
